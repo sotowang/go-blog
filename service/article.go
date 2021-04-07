@@ -38,7 +38,7 @@ func GetArticleRecordList(pageNum, pageSize int) (articleRecordList []*model.Art
 				break
 			}
 		}
-		articleRecordList = append(articleRecordList,articleRecord)
+		articleRecordList = append(articleRecordList, articleRecord)
 	}
 	return
 }
@@ -55,6 +55,7 @@ forloop1:
 		fmt.Println(111111111111)
 	}
 }
+
 // 根据多个文章的id，获取多个分类id的集合
 func getCategoryIds(articleInfoList []*model.ArticleInfo) (ids []int64) {
 LABLE:
@@ -69,15 +70,15 @@ LABLE:
 				continue LABLE //结束当前article的执行,继续下一个article的执行,
 			}
 		}
-		ids = append(ids,categoryId)
+		ids = append(ids, categoryId)
 	}
 	return
 }
 
 // 	根据分类id，获取该类文章和他们对应的分类信息
-func GetArticleListByCategoryId(categoryId,pageNum, pageSize int) (articleRecordList []*model.ArticleRecord, err error) {
+func GetArticleListByCategoryId(categoryId, pageNum, pageSize int) (articleRecordList []*model.ArticleRecord, err error) {
 	// 1.获取文章列表
-	articleInfoList, err := db.GetArticleListByCategoryId(categoryId,pageNum, pageSize)
+	articleInfoList, err := db.GetArticleListByCategoryId(categoryId, pageNum, pageSize)
 	if err != nil {
 		return
 	}
@@ -94,9 +95,18 @@ func GetArticleListByCategoryId(categoryId,pageNum, pageSize int) (articleRecord
 	for _, article := range articleInfoList {
 		articleRecord := &model.ArticleRecord{ // 根据当前文章，生成结构体
 			ArticleInfo: *article,
-			Category : *categoryList,
+			Category:    *categoryList,
 		}
-		articleRecordList = append(articleRecordList,articleRecord)
+		articleRecordList = append(articleRecordList, articleRecord)
 	}
+	return
+}
+
+func GetArticleDetail(articleId int64) (articleDetail *model.ArticleDetail, err error) {
+	articleDetailList, err := db.GetArticleDetail(articleId)
+	if err != nil {
+		return
+	}
+	articleDetail = articleDetailList[0]
 	return
 }

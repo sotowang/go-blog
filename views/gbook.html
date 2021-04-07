@@ -3,9 +3,9 @@
 <html>
 <head>
 <meta charset="utf8">
-<title>留言_XXX个人博客 - 一个站在web前端设计之路的女技术员个人博客网站</title>
-<meta name="keywords" content="个人博客,XXX个人博客,个人博客模板,XXX" />
-<meta name="description" content="XXX个人博客，是一个站在web前端设计之路的女程序员个人网站，提供个人博客模板免费资源下载的个人原创网站。" />
+<title>留言_sotowang个人博客</title>
+<meta name="keywords" content="个人博客,sotowang个人博客,个人博客模板,sotowang" />
+<meta name="description" content="sotowang个人博客" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link href="/static/css/base.css" rel="stylesheet">
 <link href="/static/css/index.css" rel="stylesheet">
@@ -29,8 +29,8 @@ window.onload = function ()
 </head>
 <body><header>
     <div class="tophead">
-      <div class="logo"><a href="/">XXX个人博客</a></div>
-     
+      <div class="logo"><a href="/">sotowang个人博客</a></div>
+
       <nav class="topnav" id="topnav">
           <ul>
             <li><a href="/">网站首页</a></li>
@@ -50,29 +50,29 @@ window.onload = function ()
   <div class="ab_box">
       <div class="blogs">
           {{range .}}
-          <li> 
+          <li>
             <h3 class="blogtitle">作者: {{.Username}}</h3>
             <div class="bloginfo">
               <p>{{.Content}}</p>
             </div>
             <div class="autor">
-              
+
               <span class="dtime">{{.CreateTime}}</span>
-        
+
               <span class="readmore">{{.Email}}</div>
           </li>
           {{end}}
       </div>
     <div class="leftbox">
       <div class="newsview">
-        <div class="news_infos"> 
-            
+        <div class="news_infos">
+
             <div class="register-container container">
-              
+
                 <div class="row">
                     <div class="register span6">
                         <form action="/leave/submit/" method="post">
-        
+
                       <p class="comment-notes"><span id="email-notes">电子邮件地址不会被公开。</span> 必填项已用<span class="required">*</span>标注</p>
                       <p class="comment-form-comment">
                         <div><label for="comment">留言*</label> </div>
@@ -88,8 +88,8 @@ window.onload = function ()
                            <input id="email" name="email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" required="required">
                           </div>
                           </p>
-                     
-                  
+
+
                       <p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="发表留言"> <input type="hidden" name="comment_post_ID" value="2" id="comment_post_ID">
                       <input type="hidden" name="comment_parent" id="comment_parent" value="0">
                       </p>
@@ -105,15 +105,15 @@ window.onload = function ()
         <h2 class="hometitle">关于我</h2>
         <div class="avatar"> <img src="/static/images/avatar.jpg"> </div>
         <div class="ab_con">
-          <p>网名：XXX</p>
-          <p>职业：Web前端设计师、网页设计 </p>
+          <p>网名：sotowang</p>
+          <p>职业：后端开发工程师 </p>
         </div>
       </div>
     </div>
   </div>
 </article>
 <footer>
-  <p>Design by <a href="/">XXX个人博客</a></p>
+  <p>Design by <a href="/">sotowang个人博客</a></p>
 </footer>
 <script src="/static/js/nav.js"></script>
 </body>

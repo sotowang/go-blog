@@ -39,23 +39,40 @@ func IndexHandle(c *gin.Context) {
 func CategoryList(c *gin.Context) {
 	categoryIdStr := c.Query("category_id")
 	categoryId, err := strconv.ParseInt(categoryIdStr, 10, 64)
-	if err!=nil {
-		c.HTML(http.StatusInternalServerError,"views/500.html",nil)
+	if err != nil {
+		c.HTML(http.StatusInternalServerError, "views/500.html", nil)
 	}
 
 	//按分类id,获取分类下的文章列表
-	articleRecordList ,err:= service.GetArticleListByCategoryId(int(categoryId),0,15)
-	if err!=nil {
-		c.HTML(http.StatusInternalServerError,"views/500.html",nil)
+	articleRecordList, err := service.GetArticleListByCategoryId(int(categoryId), 0, 15)
+	if err != nil {
+		c.HTML(http.StatusInternalServerError, "views/500.html", nil)
 	}
 
 	//再次加载所有分类数据,用于分类去
 	categoryList, err := service.GetALLCategoryList()
-	if err!=nil {
-		c.HTML(http.StatusInternalServerError,"views/500.html",nil)
+	if err != nil {
+		c.HTML(http.StatusInternalServerError, "views/500.html", nil)
 	}
-	c.HTML(http.StatusOK,"views/index.html",gin.H{
+	c.HTML(http.StatusOK, "views/index.html", gin.H{
 		"article_list":  articleRecordList,
 		"category_list": categoryList,
+	})
+}
+
+//获取文章详情
+func ArticleDetail(c *gin.Context) {
+	articleIdStr := c.Query("article_id")
+	articleId, err := strconv.ParseInt(articleIdStr, 10, 64)
+	if err != nil {
+		c.HTML(http.StatusInternalServerError, "views/500.html", nil)
+	}
+	articleDetail, err := service.GetArticleDetail(articleId)
+
+	if err != nil {
+		c.HTML(http.StatusInternalServerError, "views/500.html", nil)
+	}
+	c.HTML(http.StatusOK, "views/detail.html", gin.H{
+		"article_detail": articleDetail,
 	})
 }

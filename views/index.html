@@ -3,9 +3,9 @@
 <html>
 <head>
 <meta charset="utf8">
-<title>首页_XXX个人博客 - 一个站在web前端设计之路的女技术员个人博客网站</title>
-<meta name="keywords" content="个人博客,XXX个人博客,个人博客模板,XXX" />
-<meta name="description" content="XXX个人博客，是一个站在web前端设计之路的女程序员个人网站，提供个人博客模板免费资源下载的个人原创网站。" />
+<title>首页_sotowang的博客</title>
+<meta name="keywords" content="个人博客,sotowang个人博客,个人博客模板,sotowang" />
+<meta name="description" content="sotowang个人博客" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link href="/static/css/base.css" rel="stylesheet">
 <link href="/static/css/index.css" rel="stylesheet">
@@ -32,7 +32,7 @@ window.onload = function ()
 <header>
   <div class="tophead">
     <div class="logo"><a href="/">我的博客</a></div>
-   
+
     <nav class="topnav" id="topnav">
       <ul>
         <li><a href="/">网站首页</a></li>
@@ -45,8 +45,8 @@ window.onload = function ()
 </header>
 <article>
   <div class="blogs">
-    {{range .article_list}} 
-    <li> 
+    {{range .article_list}}
+    <li>
       <h3 class="blogtitle"><a href="/article/detail/?article_id={{.Id}}">{{.Title}}</a></h3>
       <div class="bloginfo">
         <p>{{.Summary}}</p>
@@ -64,9 +64,9 @@ window.onload = function ()
   <div class="sidebar">
     <div class="about">
       <div class="avatar"> <img src="/static/images/avatar.jpg" alt=""> </div>
-      <p class="abname">XXX</p>
-      <p class="abposition">Web前端设计师、网页设计</p>
-      <div class="abtext"> 一个80后草根站长！一直潜心研究web前端技术，一边工作一边积累经验，分享一些个人博客模板。 </div>
+      <p class="abname">sotowang</p>
+      <p class="abposition">后端开发工程师</p>
+      <div class="abtext"> </div>
     </div>
     <!--
     <div class="search">
@@ -83,7 +83,7 @@ window.onload = function ()
       <h2 class="hometitle">分类云</h2>
       <ul>
         {{range .category_list}}
-        <a href="/category/?category_id={{.CategoryId}}">{{.CategoryName}}</a> 
+        <a href="/category/?category_id={{.CategoryId}}">{{.CategoryName}}</a>
         {{end}}
       </ul>
     </div>
@@ -136,16 +136,16 @@ window.onload = function ()
     <div class="links">
       <h2 class="hometitle">友情链接</h2>
       <ul>
-        <li><a href="" title="XXX个人博客">XXX个人博客</a></li>
-        <li><a href="" title="XXX个人博客">XXX个人博客</a></li>
-        <li><a href="" title="XXX个人博客">XXX个人博客</a></li>
+        <li><a href="" title="sotowang个人博客">sotowang个人博客</a></li>
+        <li><a href="" title="sotowang个人博客">sotowang个人博客</a></li>
+        <li><a href="" title="sotowang个人博客">sotowang个人博客</a></li>
       </ul>
     </div>
   </div>
 </article>
 <div class="blank"></div>
 <footer>
-  <p>Design by <a href="/">XXX个人博客</a></p>
+  <p>Design by <a href="/">sotowang个人博客</a></p>
 </footer>
 <script src="js/nav.js"></script>
 </body>

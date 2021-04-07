@@ -43,11 +43,12 @@ func GetAricleList(pageNum, pageSize int) (articleList []*model.ArticleInfo, err
 }
 
 // 根据文章id，查询单个文章详情
-func GetArticleDetail(articleId int64) (articleDetail *model.ArticleDetail, err error) {
+func GetArticleDetail(articleId int64) (articleDetail []*model.ArticleDetail, err error) {
 	if articleId < 0 {
 		return
 	}
-	articleDetail = &model.ArticleDetail{}
+	//articleDetail = &model.ArticleDetail2{}
+
 	sqlstr := `select
 					id,summary,title,view_count,content,create_time,comment_count,username,category_id
 			from
@@ -57,7 +58,7 @@ func GetArticleDetail(articleId int64) (articleDetail *model.ArticleDetail, err 
 			and
 				status = 1
 			`
-	err = DB.Get(&articleDetail, sqlstr, articleId)
+	err = DB.Select(&articleDetail, sqlstr, articleId)
 	return
 }
 

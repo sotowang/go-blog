@@ -5,9 +5,9 @@
 		<meta charset="utf-8">
 		<title>CKEditor</title>
 		<script src="/static/ckeditor5-build-classic/ckeditor.js"></script>
-		<title>首页_XXX个人博客 - 一个站在web前端设计之路的女技术员个人博客网站</title>
-		<meta name="keywords" content="个人博客,XXX个人博客,个人博客模板,XXX" />
-		<meta name="description" content="XXX个人博客，是一个站在web前端设计之路的女程序员个人网站，提供个人博客模板免费资源下载的个人原创网站。" />
+		<title>首页_sotowang的博客</title>
+		<meta name="keywords" content="个人博客,sotowang个人博客,个人博客模板,sotowang" />
+		<meta name="description" content="sotowang个人博客" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link href="/static/css/base.css" rel="stylesheet">
 		<link href="/static/css/index.css" rel="stylesheet">
@@ -16,8 +16,8 @@
 	<body>
 		<header>
 		<div class="tophead">
-			<div class="logo"><a href="/">XXX个人博客</a></div>
-			
+			<div class="logo"><a href="/">sotowang个人博客</a></div>
+
 			<nav class="topnav" id="topnav">
 					<ul>
 					  <li><a href="/">网站首页</a></li>
@@ -32,17 +32,17 @@
 		<div style="margin:auto;height:40px;width:80%; line-height:40px">
 			<label for="author" >姓名 <span class="required">*</span></label>
 			<input id="author" name="author" type="text" value="" size="30" maxlength="245" required="required">
-		</div> 
+		</div>
 		<div style="margin:auto;height:40px;width:80%; line-height:40px">
 				<label for="author" >文章标题 <span class="required">*</span></label>
 				<input id="author" name="title" type="text" value="" size="30" maxlength="245" required="required">
-			</div> 
+			</div>
 		<div style="margin:auto;width:80%;align:center;">
 				<label for="author" style="margin:0px 0px 0px 0px;line-height:40px;">文章分类 <span class="required">*</span></label>
 				<select name="category_id">
-					{{range .}} 
+					{{range .}}
 						<option value="{{.CategoryId}}">{{.CategoryName}}</option>
-					{{end}}					
+					{{end}}
 				</select>
 		</div>
 		<div style="margin:auto;width:80%;align:center;">
@@ -66,7 +66,7 @@
 				.catch( error => {
 					console.error( error );
 				} );
-				
+
 		</script>
 		<style>
             .ck-editor__editable {

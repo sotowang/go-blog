@@ -16,11 +16,12 @@ func main() {
 		fmt.Println(err)
 	}
 	//加载静态文件
-	router.Static("/static/","./static")
+	router.Static("/static/", "./static")
 
 	//加载模板
 	router.LoadHTMLGlob("views/*")
-	router.GET("/",controller.IndexHandle)  //首页
-	router.GET("/category/",controller.CategoryList) //分类列表页面
-	_=router.Run(":8001")
+	router.GET("/", controller.IndexHandle)                 //首页
+	router.GET("/category/", controller.CategoryList)       //分类列表页面
+	router.GET("/article/detail", controller.ArticleDetail) //文章详情页面
+	_ = router.Run(":8001")
 }
